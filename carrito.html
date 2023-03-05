@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Gema Azul</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="/imagenes/logo.jpg" alt="Logo"
+                        width="100" height="70" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/quienessomos.html">Quiénes somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/carrito.html">Carrito</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="h-100 h-custom" style="background-color: #eee;">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body p-4">
+
+                                <div class="row">
+
+                                    <div class="col-lg-7">
+                                        <h5 class="mb-3"><a href="/productos.html" class="text-body"><i
+                                                    class="fas fa-long-arrow-alt-left me-2"></i>Volver</a>
+                                        </h5>
+                                        <hr>
+
+                                        <div class="card mb-3">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <div>
+                                                            <img src="/imagenes/pendientes.jpg"
+                                                                class="img-fluid rounded-3" alt="Shopping item"
+                                                                style="width: 65px;">
+                                                        </div>
+                                                        <div class="ms-3">
+                                                            <h5>Pendientes solidarios</h5>
+                                                            <p class="small mb-0">Únete a nosotros en la lucha contra el cáncer de mama</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <div style="width: 50px;">
+                                                            <h5 class="fw-normal mb-0" id="num-pendientes"></h5>
+                                                        </div>
+                                                        <div style="width: 80px;">
+                                                            <h5 class="mb-0">60€</h5>
+                                                        </div>
+                                                        <a href="#!" style="color: #cecece;"><i
+                                                                class="fas fa-trash-alt"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-5">
+
+                                        <div class="card bg-primary text-white rounded-3">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                                    <h5 class="mb-0">Detalles de compra</h5>
+                                                </div>
+
+                                                <div class="alert alert-success" role="alert" id="alerta-verde" style="display: none"></div>
+
+                                                <div class="alert alert-danger" role="alert" id="alerta-roja" style="display: none"></div>
+
+                                                <a href="#!" type="submit" class="text-white"><i
+                                                        class="fab fa-cc-mastercard fa-2x me-2"></i></a>
+                                                <a href="#!" type="submit" class="text-white"><i
+                                                        class="fab fa-cc-visa fa-2x me-2"></i></a>
+                                                <a href="#!" type="submit" class="text-white"><i
+                                                        class="fab fa-cc-amex fa-2x me-2"></i></a>
+
+                                                <form class="mt-4">
+                                                    <div class="form-outline form-white mb-4">
+                                                        <input type="text" id="nombre"
+                                                            class="form-control form-control-lg" siez="17"
+                                                            placeholder="Nombre" />
+                                                        <label class="form-label" for="nombre">Nombre</label>
+                                                    </div>
+
+                                                    <div class="form-outline form-white mb-4">
+                                                        <input type="text" id="numero"
+                                                            class="form-control form-control-lg" siez="17"
+                                                            placeholder="1234 5678 9012 3457" minlength="19"
+                                                            maxlength="19" />
+                                                        <label class="form-label" for="numero">Número</label>
+                                                    </div>
+
+                                                    <div class="row mb-4">
+                                                        <div class="col-md-6">
+                                                            <div class="form-outline form-white">
+                                                                <input type="text" id="fecha"
+                                                                    class="form-control form-control-lg"
+                                                                    placeholder="MM/YYYY" size="7" id="exp"
+                                                                    minlength="7" maxlength="7" />
+                                                                <label class="form-label"
+                                                                    for="fecha">Fecha de expiración</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-outline form-white">
+                                                                <input type="password" id="cvv"
+                                                                    class="form-control form-control-lg"
+                                                                    placeholder="&#9679;&#9679;&#9679;" size="1"
+                                                                    minlength="3" maxlength="3" />
+                                                                <label class="form-label" for="cvv">CVV</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+
+                                                <hr class="my-4">
+
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="mb-2">Subtotal</p>
+                                                    <p class="mb-2" id="subtotal"></p>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="mb-2">Envío</p>
+                                                    <p class="mb-2">0.00€</p>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between mb-4">
+                                                    <p class="mb-2">Total</p>
+                                                    <p class="mb-2" id="total"></p>
+                                                </div>
+
+                                                <button type="button" class="btn btn-success btn-block btn-lg" onclick="comprar()">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span>Comprar</span>
+                                                    </div>
+                                                </button>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let num_pendientes = document.getElementById('num-pendientes');
+        let subtotal = document.getElementById('subtotal');
+        let total = document.getElementById('total');
+
+        let pendientes = localStorage.getItem('pendientes');
+
+        if (pendientes == null) {
+            pendientes = 0;
+        }
+
+        pendientes = parseInt(pendientes);
+
+        let totalPrecio = (pendientes * 60) + ".00€";
+
+        num_pendientes.innerText = pendientes;
+        subtotal.innerText = totalPrecio;
+        total.innerText = totalPrecio;
+
+        function comprar() {
+            let alerta_roja = document.getElementById('alerta-roja');
+            alerta_roja.innerHTML = "";
+            alerta_roja.style.display = "none";
+
+            let alerta_verde = document.getElementById('alerta-verde');
+            alerta_verde.innerHTML = "";
+            alerta_verde.style.display = "none";
+
+            let nombre = document.getElementById('nombre').value;
+            let numero = document.getElementById('numero').value;
+            let fecha = document.getElementById('fecha').value;
+            let cvv = document.getElementById('cvv').value;
+
+            let alertaRoja = "";
+            let alertaVerde = "";
+
+            if (!nombre) {
+                alertaRoja += "Introduce un nombre.<br/>";
+            }
+
+            if (!numero) {
+                alertaRoja += "Introduce un numero.<br/>";
+            }
+
+            if (!fecha) {
+                alertaRoja += "Introduce la fecha de expiración.<br/>";
+            }
+
+            if (!cvv) {
+                alertaRoja += "Introduce el CVV.<br/>";
+            }
+
+            if (alertaRoja !== "") {
+                alerta_roja.innerHTML = alertaRoja;
+                alerta_roja.style.display = "block";
+            } else {
+                alerta_verde.innerHTML = "Gracias por su compra.";
+                alerta_verde.style.display = "block";
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+body {
+    background-image: url("/imagenes/carrousel1.jpg");
+    background-size: cover;
+}
+
+.bg-body-tertiary {
+    background-color: rgb(50, 49, 47) !important;
+}
+
+.nav-link {
+    color: white !important;
+}

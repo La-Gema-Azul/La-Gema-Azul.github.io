@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Gema Azul</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="/imagenes/logo.jpg" alt="Logo"
+                        width="100" height="70" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/quienessomos.html">Quiénes somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/carrito.html">Carrito</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="p-5">
+            <div class="card" style="width: 18rem;">
+                <img src="/imagenes/pendientes.jpg" class="card-img-top"
+                    alt="Pendientes">
+                <div class="card-body">
+                    <h6 class="card-title">Pendientes solidarios</h6>
+                    <p class="card-text">Únete a nosotros en la lucha contra el cáncer de mama</p>
+                    <p class="card-text">60€</p>
+                    <a href="#" class="btn btn-primary" onclick="anadirAlCarrito()">Añadir al carrito</a>
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="alert alert-success" role="alert" id="alerta-verde" style="display: none"></div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        function anadirAlCarrito() {
+            let pendientes = localStorage.getItem("pendientes");
+            
+            if (pendientes == null) {
+                localStorage.setItem("pendientes", 0);
+                pendientes = 0;
+            }
+
+            localStorage.setItem("pendientes", parseInt(pendientes) + 1);
+
+            let alerta_verde = document.getElementById('alerta-verde');
+            alerta_verde.style.display = "block";
+            alerta_verde.innerHTML = "Se han añadido Pendientes solidarios al carrito.";
+        }
+
+    </script>
+</body>
+
+</html>
